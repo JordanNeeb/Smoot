@@ -32,14 +32,6 @@ const Form = () => {
       inches++;
     }
 
-    console.log(`float ${float}`);
-    console.log(`whole ${whole}`);
-    console.log(`remainder ${remainder}`);
-    console.log(`feet ${feet}`);
-    console.log(`inches ${inches}`);
-    console.log(`numerator ${numerator}`);
-    console.log(`denominator ${denominator}`);
-
     setConversion({ feet, inches, numerator, denominator });
   };
 
