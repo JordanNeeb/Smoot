@@ -17,13 +17,19 @@ const Form = () => {
     const whole = Math.floor(float);
     const remainder = (float % 1).toFixed(4);
     const feet = Math.floor(whole / 12);
-    const inches = whole - feet * 12;
+    let inches = whole - feet * 12;
     let numerator = Math.round(remainder * 16);
     let denominator = 16;
 
     while (numerator % 2 == 0 && denominator > 2) {
       numerator = numerator / 2;
       denominator = denominator / 2;
+    }
+
+    if (numerator === denominator) {
+      numerator = null;
+      denominator = null;
+      inches++;
     }
 
     console.log(`float ${float}`);
