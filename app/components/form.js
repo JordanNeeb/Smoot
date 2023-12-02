@@ -44,7 +44,7 @@ const Form = () => {
         {`${conversion.numerator || conversion.feet ? '"' : ""}`}
       </div>
       <div>
-        <span class="block mb-2 pl-0.5 text-xs font-bold text-gray-500 dark:text-white uppercase">
+        <span class="block mb-2 pl-0.5 text-xs font-bold text-gray-500 uppercase">
           Measurment
         </span>
         <input
