@@ -44,13 +44,13 @@ const Form = () => {
         {`${conversion.numerator || conversion.feet ? '"' : ""}`}
       </div>
       <div>
-        <span class="block mb-2 pl-0.5 text-xs font-bold text-gray-500 uppercase">
+        <span className="block mb-2 pl-0.5 text-xs font-bold text-gray-500 uppercase">
           Measurment
         </span>
         <input
           type="number"
           id="measurment"
-          class=" mb-4 bg-gray-50 border border-gray-300 text-gray-700 text-sm rounded-lg focus:ring-cyan-500 focus:border-cyan-500 block w-full p-2.5"
+          className=" mb-4 bg-gray-50 border border-gray-300 text-gray-700 text-sm rounded-lg focus:ring-cyan-500 focus:border-cyan-500 block w-full p-2.5"
           onChange={(e) => setMeasurment(e.target.value)}
         />
       </div>
