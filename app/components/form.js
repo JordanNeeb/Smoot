@@ -21,17 +21,10 @@ const Form = () => {
     let numerator = Math.round(remainder * 16);
     let denominator = 16;
 
-    console.log(float);
-    console.log(remainder);
-    console.log(numerator);
-
     while (numerator % 2 == 0) {
       numerator = numerator / 2;
       denominator = denominator / 2;
     }
-
-    console.log(numerator);
-    console.log(denominator);
 
     setConversion({ feet, inches, numerator, denominator });
   };
@@ -51,16 +44,13 @@ const Form = () => {
         {`${conversion.numerator || conversion.feet ? '"' : ""}`}
       </div>
       <div>
-        <label
-          for="measurment"
-          class="block mb-2 pl-0.5 text-xs font-bold text-gray-500 dark:text-white uppercase"
-        >
+        <span class="block mb-2 pl-0.5 text-xs font-bold text-gray-500 dark:text-white uppercase">
           Measurment
-        </label>
+        </span>
         <input
           type="number"
           id="measurment"
-          class=" mb-4 bg-gray-50 border border-gray-300 text-gray-700 text-sm rounded-lg focus:ring-cyan-500 focus:border-cyan-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-cyan-500 dark:focus:border-cyan-500"
+          class=" mb-4 bg-gray-50 border border-gray-300 text-gray-700 text-sm rounded-lg focus:ring-cyan-500 focus:border-cyan-500 block w-full p-2.5"
           onChange={(e) => setMeasurment(e.target.value)}
         />
       </div>
