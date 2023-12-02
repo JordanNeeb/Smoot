@@ -21,10 +21,18 @@ const Form = () => {
     let numerator = Math.round(remainder * 16);
     let denominator = 16;
 
-    while (numerator % 2 == 0) {
+    while (numerator % 2 == 0 && denominator > 2) {
       numerator = numerator / 2;
       denominator = denominator / 2;
     }
+
+    console.log(`float ${float}`);
+    console.log(`whole ${whole}`);
+    console.log(`remainder ${remainder}`);
+    console.log(`feet ${feet}`);
+    console.log(`inches ${inches}`);
+    console.log(`numerator ${numerator}`);
+    console.log(`denominator ${denominator}`);
 
     setConversion({ feet, inches, numerator, denominator });
   };
@@ -34,14 +42,14 @@ const Form = () => {
       <div className="flex justify-center text-5xl text-cyan-800 mb-10 h-12">
         {`${conversion.feet ? `${conversion.feet}'` : ""}`}
         <span>&nbsp;</span>
-        {`${conversion.inches ? conversion.inches : ""}`}
-        {conversion.numerator && (
+        {`${conversion.inches ? `${conversion.inches}` : ""}`}
+        {conversion.numerator ? (
           <span className="text-3xl">
             <sup>{conversion.numerator}</sup>&frasl;
             <sub>{conversion.denominator}</sub>
           </span>
-        )}
-        {`${conversion.numerator || conversion.feet ? '"' : ""}`}
+        ) : null}
+        {`${conversion.numerator || conversion.inches ? '"' : ""}`}
       </div>
       <div>
         <span className="block mb-2 pl-0.5 text-xs font-bold text-gray-500 uppercase">
