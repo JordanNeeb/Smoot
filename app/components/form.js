@@ -13,9 +13,9 @@ const Form = () => {
   });
 
   const convert = () => {
-    const conversion = measurment * 0.0393701;
-    const whole = Math.floor(conversion);
-    const remainder = (conversion % 1).toFixed(4);
+    const float = measurment * 0.0393701;
+    const whole = Math.floor(float);
+    const remainder = (float % 1).toFixed(4);
     const feet = Math.floor(whole / 12);
     let inches = whole - feet * 12;
     let numerator = Math.round(remainder * 16);
@@ -38,16 +38,16 @@ const Form = () => {
   return (
     <div className="flex flex-col justify-center h-full">
       <div className="flex justify-center text-5xl text-cyan-800 mb-10 h-12">
-        {`${conversion.feet ? `${conversion.feet}'` : ""}`}
+        {conversion.feet ? <span>{conversion.feet}</span> : null}
         <span>&nbsp;</span>
-        {`${conversion.inches ? `${conversion.inches}` : ""}`}
+        {conversion.inches ? <span>{conversion.inches}</span> : null}
         {conversion.numerator ? (
-          <span className="text-3xl">
+          <span className="text-3xl font-semibold">
             <sup>{conversion.numerator}</sup>&frasl;
             <sub>{conversion.denominator}</sub>
           </span>
         ) : null}
-        {`${conversion.numerator || conversion.inches ? '"' : ""}`}
+        {conversion.numerator || conversion.inches ? <span>"</span> : null}
       </div>
       <div>
         <span className="block mb-2 pl-0.5 text-xs font-bold text-gray-500 uppercase">
