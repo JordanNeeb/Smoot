@@ -13,9 +13,9 @@ const Form = () => {
   });
 
   const convert = () => {
-    const float = measurment * 0.0393701;
-    const whole = Math.floor(float);
-    const remainder = (float % 1).toFixed(4);
+    const conversion = measurment * 0.0393701;
+    const whole = Math.floor(conversion);
+    const remainder = (conversion % 1).toFixed(4);
     const feet = Math.floor(whole / 12);
     let inches = whole - feet * 12;
     let numerator = Math.round(remainder * 16);
