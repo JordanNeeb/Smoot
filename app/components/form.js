@@ -43,7 +43,7 @@ const Form = () => {
   return (
     <div className="flex flex-col justify-center h-full">
       <div className="flex justify-center text-5xl text-cyan-800 mb-10 h-12">
-        {conversion.feet ? <span>{conversion.feet}</span> : null}
+        {conversion.feet ? <span>{conversion.feet}'</span> : null}
         <span>&nbsp;</span>
         {conversion.inches ? <span>{conversion.inches}</span> : null}
         {conversion.numerator ? (
